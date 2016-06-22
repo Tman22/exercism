@@ -7,13 +7,16 @@ var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
   var last = input.split('')[input.length - 1]
-  if (input === input.toUpperCase()) {
-    return 'Whoa, chill out!'
-  } else if (last === '?') {
-    return 'Sure.'
-  } else if (last === '.' || '!') {
-    return 'Whatever.'
+  if (input.match(/^[ ]*$/g)) {
+    return 'Fine. Be that way!';
   }
+  if (input.toUpperCase() === input & input.toLowerCase() !== input) {
+    return 'Whoa, chill out!';
+  }
+  if (last === '?') {
+    return 'Sure.';
+  }
+  return 'Whatever.';
 };
 
 module.exports = Bob;
